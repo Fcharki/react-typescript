@@ -31,13 +31,29 @@ export const BooksForm: FC<BookFormProps> = ({ dispatch, dataToEdit, toggleModal
               year: book.year,
             }
           });
-        } else {
-          // dispatch edit contact action
-          toggleModal();
-        }
-        setBook({  //* clear form after submission
+
+          setBook({  //* clear form after submission
             id: 0, title: '', author: '', genre: '', year: ''
         });
+        
+        } else {
+          // dispatch edit contact action
+          dispatch({
+            type: 'UPDATE_BOOK',
+            payload: {
+              id: dataToEdit.id,
+              updates: {
+                id: Date.now(),
+                title: book.title,
+                author: book.author,
+                genre: book.genre,
+                year: book.year,
+              }
+            }
+          });
+          toggleModal();
+        }
+      
       };
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement> ) => {

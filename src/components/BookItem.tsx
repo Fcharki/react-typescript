@@ -21,7 +21,10 @@ export const BookItem: FC<Book & ExtraProps> = ({ id, title, author, genre, year
               `Are you sure you want to delete book  ${title} of ${author}?`
             );
             if (confirmDelete) {
-              // dispatch action
+               dispatch({
+                type: 'DELETE_BOOK',
+                payload: { id }
+              });
             }
           }}  />
         </td>
