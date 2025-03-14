@@ -1,13 +1,15 @@
 import { FC } from "react";
-import { Book } from "../lib/types";
+import { Book, Action} from "../lib/types";
 import { BookItem } from "./BookItem";
 import { MdSettings } from "react-icons/md";
 
 type BooksListProps = {
   books: Book[]; // Now only receives paginated books
+  handleEdit: (id: number) => void;
+  dispatch: React.Dispatch<Action>;
 };
 
-export const BooksList: FC<BooksListProps> = ({ books }) => {
+export const BooksList: FC<BooksListProps> = ({ books, handleEdit, dispatch }) => {
   return (
     <div className="p-6 bg-gray-200 text-gray-800 rounded-lg shadow-lg">
       <h3 className="text-xl font-semibold text-amber-800 mb-4">List of Books</h3>
@@ -24,7 +26,9 @@ export const BooksList: FC<BooksListProps> = ({ books }) => {
           </thead>
           <tbody>
             {books.map((book) => (
-              <BookItem key={book.id} {...book} />
+              <BookItem key={book.id} {...book}  
+                        handleEdit={handleEdit}
+                        dispatch={dispatch}/>
             ))}
           </tbody>
         </table>

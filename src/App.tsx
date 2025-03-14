@@ -1,21 +1,38 @@
+import { useReducer, useState, useEffect } from "react";
 import "./App.css";
 import { MdMenuBook } from "react-icons/md";
+import ReactPaginate from "react-paginate";
+import { Book, State } from "./lib/types";
+import { BookReducer } from "./reducer/BookReducer";
 import { BooksForm } from "./components/BooksForm";
 import { BooksList } from "./components/BooksList";
-import { useReducer, useState } from "react";
-import { BookReducer } from "./reducer/BookReducer";
-import { State } from "./lib/types";
-import ReactPaginate from "react-paginate";
+import { EditModal } from "./components/EditModal";
+
 
 const initialState: State = { books: [] };
 
 function App() {
-  // State Management
+  //TODO :  State Management with reducer
   const [state, dispatch] = useReducer(BookReducer, initialState);
+
+//TODO : Handle Edit Modal State
+  const [showModal, setShowModal] = useState(false);
+  const [dataToEdit, setDataToEdit] = useState<Book | undefined>(undefined);
+
+  useEffect(() => {
+    if (!showModal) {
+      setDataToEdit(undefined);
+    }
+  }, [showModal]);
   const toggleModal = () => {
-    console.log("Modal toggled!");
-    // Add modal handling logic here if needed
+    setShowModal((show) => !show);
   };
+  const handleEdit = (id: number) => {
+    setDataToEdit(state.books.find((book) => book.id === id));
+    toggleModal();
+  };
+
+  // TODO : Handle books pagination state
   // Pagination State
   const booksPerPage = 3;
   const [bookOffset, setBookOffset] = useState(0);
@@ -58,7 +75,15 @@ function App() {
           <div className="p-8 flex flex-col justify-center">
             {state.books.length > 0 ? (
               <>
-                <BooksList books={currentItems} />
+                <BooksList books={currentItems} 
+                          handleEdit={handleEdit}
+                          dispatch={dispatch}/>
+                 <EditModal
+                            showModal={showModal}
+                            dataToEdit={dataToEdit}
+                            toggleModal={toggleModal}
+                            dispatch={dispatch}
+                          />
                 <div className="mt-6 flex justify-center">
                   <ReactPaginate
                     breakLabel="..."
