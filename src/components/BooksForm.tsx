@@ -9,6 +9,7 @@ type BookFormProps = {
     toggleModal: () => void;
 }
 export const BooksForm: FC<BookFormProps> = ({ dispatch, dataToEdit, toggleModal }) => {
+    const [errorMsg, setErrorMsg] = useState<string>('');
     const [book, setBook] = useState<Book>({
                                 id: dataToEdit?.id ?? 0,
                                 title: dataToEdit?.title ?? '',
@@ -20,6 +21,7 @@ export const BooksForm: FC<BookFormProps> = ({ dispatch, dataToEdit, toggleModal
 
     const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        
         if (!dataToEdit) {
           dispatch({
             type: 'ADD_BOOK',
@@ -35,7 +37,7 @@ export const BooksForm: FC<BookFormProps> = ({ dispatch, dataToEdit, toggleModal
           setBook({  //* clear form after submission
             id: 0, title: '', author: '', genre: '', year: ''
         });
-        
+
         } else {
           // dispatch edit contact action
           dispatch({
