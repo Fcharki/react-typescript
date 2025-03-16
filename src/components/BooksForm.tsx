@@ -9,7 +9,6 @@ type BookFormProps = {
     toggleModal: () => void;
 }
 export const BooksForm: FC<BookFormProps> = ({ dispatch, dataToEdit, toggleModal }) => {
-    const [errorMsg, setErrorMsg] = useState<string>('');
     const [book, setBook] = useState<Book>({
                                 id: dataToEdit?.id ?? 0,
                                 title: dataToEdit?.title ?? '',

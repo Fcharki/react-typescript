@@ -1,5 +1,5 @@
 import { useReducer, useState, useEffect } from "react";
-import "./App.css";
+import "./styles/App.css";
 import { MdMenuBook } from "react-icons/md";
 import ReactPaginate from "react-paginate";
 import { Book, State } from "./lib/types";
@@ -84,21 +84,23 @@ function App() {
                             toggleModal={toggleModal}
                             dispatch={dispatch}
                           />
-                <div className="mt-6 flex justify-center">
-                  <ReactPaginate
-                    breakLabel="..."
-                    nextLabel="Next >"
-                    previousLabel="< Previous"
-                    pageCount={pageCount}
-                    onPageChange={handlePageClick}
-                    containerClassName="flex space-x-2"
-                    pageClassName="px-3 py-2 bg-gray-200 rounded-lg font-extrabold cursor-pointer"
-                    activeClassName="bg-amber-600 text-white cursor-pointer"
-                    previousClassName="px-3 py-2 text-white bg-amber-300 rounded-full border border-gray-300 cursor-pointer"
-                    nextClassName="px-3 py-2 text-white bg-amber-300 rounded-full border border-gray-300 cursor-pointer"
-                    disabledClassName="opacity-50 cursor-not-allowed"
-                  />
-                </div>
+                          <div className="mt-6 flex justify-center">
+                          <ReactPaginate
+                            breakLabel="..."
+                            nextLabel="Next >"
+                            previousLabel="< Previous"
+                            pageCount={pageCount}
+                            onPageChange={handlePageClick}
+                            containerClassName="flex space-x-2"
+                            pageClassName="px-3 py-2 bg-amber-300 rounded-lg font-extrabold cursor-pointer"
+                            pageLinkClassName="px-3 py-2 bg-amber-300 rounded-lg font-extrabold cursor-pointer"
+                            activeClassName="bg-green-300 rounded-full"
+                            activeLinkClassName="text-white bg-green-300 px-3 py-2 rounded-full"
+                            previousClassName="px-3 py-2 text-white bg-amber-300 rounded-full border border-gray-300 cursor-pointer"
+                            nextClassName="px-3 py-2 text-white bg-amber-300 rounded-full border border-gray-300 cursor-pointer"
+                            disabledClassName="opacity-50 cursor-not-allowed"
+                          />
+                        </div>
               </>
             ) : (
               <>

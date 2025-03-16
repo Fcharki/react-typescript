@@ -13,12 +13,13 @@ export type State = {
     books: Book [];
 }
 
-
+// todo : defining update type
 export type Update = {
     id: number;
     updates: Book;
   }
 
+// todo : defining delete type
   export type Delete = {
     id: number;
   }

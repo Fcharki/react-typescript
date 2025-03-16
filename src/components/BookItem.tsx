@@ -18,7 +18,7 @@ export const BookItem: FC<Book & ExtraProps> = ({ id, title, author, genre, year
         <FaEdit size={25} className='icon text-amber-700' onClick={() => handleEdit(id)} />
         <RiDeleteBin6Fill size={25} className='icon text-green-700' onClick={() => {
             const confirmDelete = window.confirm(
-              `Are you sure you want to delete book  ${title} of ${author}?`
+              `Are you sure you want to delete book ${title} of ${author}?`
             );
             if (confirmDelete) {
                dispatch({

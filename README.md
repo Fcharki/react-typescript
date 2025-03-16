@@ -1,54 +1,97 @@
-# React + TypeScript + Vite
+# Library Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and efficient **Library Management App** built using **React** and **TypeScript**. The application provides full **CRUD operations** for managing books and implements **pagination** using `react-paginate`. State management is handled with **useReducer**, and **Tailwind CSS** is used for a visually appealing and smooth user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add, Update, Delete, and View Books**
+- **Pagination with react-paginate** for optimized performance & user experience
+- **State management using useReducer** for predictable state updates
+- **Tailwind CSS for modern UI styling**
+- **Responsive Design for mobile and desktop**
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** (TypeScript)
+- **useReducer** (State Management)
+- **react-paginate** (Pagination)
+- **Tailwind CSS** (Styling)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation & Setup
+
+1. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/Fcharki/react-typescript.git
+   cd react-typescript
+   ```
+
+2. **Install Dependencies:**
+   ```sh
+   npm install
+   ```
+
+3. **Compile assets & Run the App:**
+   ```sh
+   npm run dev
+   ```
+
+## Project Structure
+```
+/react-typescript
+│── src
+│   ├── components  # Reusable UI components
+│   ├── lib/types   # TypeScript types
+│   ├── reducer     # Reducer for state management
+│   ├── styles      # Tailwind configurations
+│   ├── App.tsx     # Main App component
+│   ├── main.tsx    # Entry point
+│── public
+│── package.json
+│── tailwind.config.js
+│── README.md
+│── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Dependencies
+```json
+{
+  "dependencies": {
+   "@tailwindcss/vite": "^4.0.14",
+    "bootstrap": "^5.3.3",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-icons": "^4.7.1",
+    "react-paginate": "^8.3.0",
+    "tailwindcss": "^4.0.14"
+  }
+}
 ```
+
+## 📷 App Screens 
+
+To provide a better understanding of the app, here are key screenshots and demo videos.
+
+### 🏠 Main App Views
+
+Below are some images showcasing different sections of the App:
+
+#### 📌 Main app View
+![Main Screenshot](/src/assets/demo/app-main.png)
+
+#### 📌 Books Listing 
+![Books Listing Screenshot](/src/assets/demo/listing.png)
+
+#### 📌 Book edit modal
+![Book Details Screenshot](/src/assets/demo/edit-book-data.png)
+
+## 🚀 Live Demo
+
+🔗 **Try the App Here:** [Live Demo](linktodeployedapp)
+
+## License
+This project is licensed under the **MIT License**.
+
+---
+Developed with ❤️ using React + TypeScript 🚀
+
