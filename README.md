@@ -1,23 +1,23 @@
-# Library Management App
+# 📚 Library Management App
 
 A simple and efficient **Library Management App** built using **React** and **TypeScript**. The application provides full **CRUD operations** for managing books and implements **pagination** using `react-paginate`. State management is handled with **useReducer**, and **Tailwind CSS** is used for a visually appealing and smooth user experience.
 
-## Features
+## ⚡ Features
 
-- **Add, Update, Delete, and View Books**
-- **Pagination with react-paginate** for optimized performance & user experience
-- **State management using useReducer** for predictable state updates
-- **Tailwind CSS for modern UI styling**
-- **Responsive Design for mobile and desktop**
+- ➕ **Add, Update, Delete, and View Books**
+- 🔢 **Pagination** with `react-paginate` for optimized performance & user experience
+- 🔄 **State management** using `useReducer` for predictable state updates
+- 🎨 **Tailwind CSS** for modern UI styling
+- 📱 **Responsive Design** for mobile and desktop
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **React** (TypeScript)
 - **useReducer** (State Management)
 - **react-paginate** (Pagination)
 - **Tailwind CSS** (Styling)
 
-## Installation & Setup
+## 📥 Installation & Setup
 
 1. **Clone the Repository:**
    ```sh
@@ -88,9 +88,6 @@ Below are some images showcasing different sections of the App:
 ## 🚀 Live Demo
 
 🔗 **Try the App Here:** [Live Demo](linktodeployedapp)
-
-## License
-This project is licensed under the **MIT License**.
 
 ---
 Developed with ❤️ using React + TypeScript 🚀
