@@ -87,8 +87,9 @@ Below are some images showcasing different sections of the App:
 
 ## 🚀 Live Demo
 
-🔗 **Try the App Here:** [Live Demo](https://67d6354c6f217f47495ea95c--fbooks-lib.netlify.app/)
+🔗 **Try the App Here:** [Live Demo](https://fbooks-lib.netlify.app/)
 
 ---
 Developed with ❤️ using React + TypeScript 🚀
+
 
