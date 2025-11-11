@@ -6,8 +6,10 @@ export const BookReducer = (state : State, action : Action) : State => {
     switch(action.type) {
         case 'ADD_BOOK':
             return {
-                ...state, 
-                books: [...state.books, action.payload as Book]
+                ...state, // todo : this copies all existing properties from the state object into a new object.
+                books: [
+                    ...state.books, // todo: Copies all the existing books into a new array.
+                    action.payload as Book] // todo: Adds the new book to that array.
             };
 
         case 'UPDATE_BOOK':
