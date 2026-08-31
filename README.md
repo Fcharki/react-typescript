@@ -91,5 +91,3 @@ Below are some images showcasing different sections of the App:
 
 ---
 Developed with ❤️ using React + TypeScript 🚀
-
-
