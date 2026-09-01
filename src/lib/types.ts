@@ -16,8 +16,8 @@ export type State = {
 // todo : defining update type
 export type Update = {
     id: number;
-    updates: Book;
-  }
+    updates: Partial<Book>;
+};
 
 // todo : defining delete type
   export type Delete = {

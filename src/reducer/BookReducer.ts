@@ -13,6 +13,7 @@ export const BookReducer = (state : State, action : Action) : State => {
             };
 
         case 'UPDATE_BOOK':
+        {  
             const { id, updates } = action.payload as Update;
             return {
                 ...state,
@@ -26,6 +27,7 @@ export const BookReducer = (state : State, action : Action) : State => {
                 return book;
                 })
             };
+        }
 
             case 'DELETE_BOOK': {
                 const { id } = action.payload;
